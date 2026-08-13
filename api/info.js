@@ -1,1 +1,2 @@
-
+const{spoty,valid,track}=require("./_lib");
+module.exports=async(req,res)=>{try{if(req.method!=="GET")return res.status(405).json({success:false,message:"Method tidak diizinkan"});let u=req.query.url;if(!u)return res.status(400).json({success:false,message:"URL Spotify wajib diisi"});if(!valid(u))return res.status(400).json({success:false,message:"URL Spotify tidak valid"});let d=await spoty("/api/spotify/info?url="+encodeURIComponent(u));if(!d.post)throw Error("Data lagu tidak ditemukan");res.json({success:true,data:track(d.post)})}catch(e){console.error(e);res.status(500).json({success:false,message:e.message})}};
