@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07090b">
+<title>SpotyLoad — Spotify Downloader</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="logo"><b>♪</b><span>Spoty<span>Load</span></span></div><small>Spotify Tools</small></header>
+
+<main>
+<section class="hero">
+  <label>● &nbsp; Spotify Downloader</label>
+  <h1>Download musik<br><em>lebih simpel.</em></h1>
+  <p>Tempel link Spotify lagu atau playlist untuk mendapatkan metadata dan download.</p>
+
+  <div class="box">
+    <div class="input"><i>♪</i><input id="url" placeholder="Tempel link Spotify di sini..."><button id="clear">×</button></div>
+    <div class="buttons">
+      <button id="track" class="green">♫ &nbsp; Lagu</button>
+      <button id="playlist">☷ &nbsp; Playlist</button>
+    </div>
+  </div>
+  <small class="hint"><span>●</span> Mendukung Spotify Track & Playlist</small>
+</section>
+
+<div id="loading" class="panel hidden"><div class="spinner"></div><b id="loadTitle">Memproses...</b><p id="loadText">Tunggu sebentar</p></div>
+<div id="error" class="error hidden"><b>!</b><div><strong>Terjadi kesalahan</strong><p id="errorText"></p></div></div>
+
+<section id="trackResult" class="result hidden">
+  <h3>Hasil Lagu <small>TRACK</small></h3>
+  <div class="trackCard">
+    <img id="cover">
+    <div><small>SPOTIFY TRACK</small><h2 id="title">-</h2><p id="artist">-</p><div class="meta"><span id="album">-</span> • <span id="duration">0:00</span></div></div>
+    <div class="download"><button id="download">↓ &nbsp; Download MP3</button><small id="downloadStatus">MP3</small></div>
+  </div>
+</section>
+
+<section id="playlistResult" class="result hidden">
+  <h3>Playlist <small>PLAYLIST</small></h3>
+  <div class="playlistHead"><img id="playlistCover"><div><small>SPOTIFY PLAYLIST</small><h2 id="playlistTitle">-</h2><p id="owner">-</p><b id="count">0 lagu</b></div></div>
+  <div id="list"></div>
+</section>
+
+<section class="features">
+  <article><b>⚡</b><div><strong>Cepat</strong><p>Proses otomatis melalui server.</p></div></article>
+  <article><b>♪</b><div><strong>Metadata</strong><p>Judul, artis, album dan thumbnail.</p></div></article>
+  <article><b>▣</b><div><strong>Playlist</strong><p>Tampilkan daftar lagu playlist.</p></div></article>
+</section>
+</main>
+
+<footer>SpotyLoad<br><small>Spotify Downloader & Metadata</small></footer>
+<script src="/app.js"></script>
+</body>
+</html>
