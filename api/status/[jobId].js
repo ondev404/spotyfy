@@ -1,2 +1,0 @@
-const{spoty}=require("../_lib");
-module.exports=async(req,res)=>{try{let id=req.query.jobId;if(!id)return res.status(400).json({success:false,message:"Job ID wajib diisi"});let d=await spoty("/api/spotify/track/status/"+encodeURIComponent(id));res.json({success:true,data:d})}catch(e){console.error(e);res.status(500).json({success:false,message:e.message})}};
